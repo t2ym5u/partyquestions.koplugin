@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6] - 2026-11-09
+
+### Fixed
+- A language tried once in the game no longer sticks for good: the game
+  now starts in KOReader's language (French when KOReader is in French),
+  and a language picked in the game holds until KOReader's language changes.
+
 ## [1.0.5] - 2026-11-04
 
 ### Fixed

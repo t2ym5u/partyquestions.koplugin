@@ -165,7 +165,7 @@ local PartyQuestionsScreen = ScreenBase:extend{}
 
 function PartyQuestionsScreen:init()
     local p = self.plugin
-    self.lang    = p:getSetting("lang", _.lang() == "fr" and "fr" or "en")
+    self.lang    = p:getLang({ "fr", "en" })
     self.adults  = p:getSetting("adults", false) and true or false
     self.decks   = self:_loadDeckSelection()
     local names  = p:getSetting("names")
@@ -272,7 +272,7 @@ function PartyQuestionsScreen:openLangMenu()
         on_select  = function(lang)
             if lang == self.lang then return end
             self.lang = lang
-            self.plugin:saveSetting("lang", lang)
+            self.plugin:setLang(lang)
             self:onNewGame()
         end,
     }
